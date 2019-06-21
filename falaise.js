@@ -1,5 +1,7 @@
 var score = 300;
 var alt= document.getElementById('Altitude');
+var $sauter=document.getElementById('Sauter');
+var $aigle1 = document.getElementById('Aigle');
 var compteur = 1;
 var gainP = 5;
 var gainA = 20;
@@ -29,9 +31,12 @@ var perteS = 10;
 	function aigle1 (){//gain de souvenirs
 		souvenirs = souvenirs + gainA;
 		Souvenirs.innerHTML = souvenirs;
+		$bouton.classList.add("disparition");
+
 	}
 	function aigle2 (){//gain multi
 		compteur= compteur + 2;
+		$bouton.classList.add("disparition");
 		//Bonus_malus.innerHTML = compteur;
 	}
 //malus apres avoir attraper un spectre/corbeau/vautour---------------------------------
@@ -82,11 +87,11 @@ var perteS = 10;
 	function chute(){
 		score--;
 		alt.innerHTML = score;
+
 	}
 	function descente(){
 		setInterval("chute()",500);
+		$sauter.classList.add("disparition");
+
 	}
 	
-
-
-
