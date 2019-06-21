@@ -1,0 +1,87 @@
+.container{
+	background-image: url("background3.jpg");
+	background-color: #3d7075;
+	margin: auto;
+	width: 800px;
+	height: 600px;
+	overflow: hidden;
+	color: white;
+	font-size: 0.4em;
+	text-align: right;
+
+
+}
+.debutcontainer{
+	margin-bottom: 
+	margin-top: 0px;
+	padding: 0px;
+	animation-duration: 100000s;
+  	animation-name: slidein;
+}
+@keyframes slidein {
+  from {
+    background-position: 0px 9999000px;
+    
+    }
+
+  to {
+    background-position: 0px 0px;
+  }
+}
+
+.falaise{	
+	background-color: brown;
+	width: 90px;
+	margin-left: -50px;
+	height: 750px;
+	border-radius: 15px;
+	
+
+}
+.debutfalaise{
+	animation-duration: 13s;
+  	animation-name: slideon;
+  	margin-left: -900px;
+  	margin-top: -900px;
+}
+@keyframes slideon {
+  from {
+    margin-left: -50px;
+    margin-top: 0px;
+    
+    }
+
+  to {
+    margin-left: -200px;
+    margin-top: -400px;
+  }
+}
+
+
+
+.man{
+	width: 10px;
+	height: 16px;
+	border-radius: 10px;
+	background-color: red;
+	border: 2px solid orange;
+	margin-top: 425px;
+	margin-left: 30px;
+}
+.clickman{
+
+	 animation-duration: 1s;
+  	animation-name: slodeon;  	
+}
+@keyframes slodeon {
+  from {
+    
+    margin-top: 425px;
+    
+    }
+
+  to {
+   
+    margin-top: 400px;
+  }
+}
