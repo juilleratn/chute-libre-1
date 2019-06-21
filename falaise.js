@@ -8,7 +8,7 @@ var cout = 20;
 var auto = 0;
 var souvenirs = 0;
 var perteS = 10;
-//
+
 //var waou = new Audio('car_horn.wav');
 //waou.play();
 
