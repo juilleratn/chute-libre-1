@@ -1,0 +1,32 @@
+.disparition{
+	display: none;
+	width: 0px;
+	height: 0px;
+}
+.apparition{
+	display: block;
+	height: auto;
+	width: auto;
+}
+#Aigle2{
+	
+	width: 300px;
+	height :150px;
+}
+#Spectre{
+	width: 100px;
+	height: 100px;
+}
+#Pigeon, #Pigeon2{
+	width: 100px;
+	height: 100px;
+}
+#Corbeau{
+	width:  150px;
+	height: 150px;
+}
+#Bouton{/*Max*/
+	width:  150px;
+	height: 150px;
+	
+}
