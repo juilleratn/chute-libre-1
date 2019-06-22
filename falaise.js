@@ -1,7 +1,9 @@
 var score = 300;
 var alt= document.getElementById('Altitude');
+
 var $sauter=document.getElementById('Sauter');
 var $aigle1 = document.getElementById('Aigle');
+
 var compteur = 1;
 var gainP = 5;
 var gainA = 20;
@@ -21,6 +23,7 @@ var perteS = 10;
 	}
 //bonus apres avoir attraper un "pigeon"/aigle/et caetera------------------------------
 	function pigeon1 (){//gain de souvenirs
+		
 		souvenirs = souvenirs + gainP;
 		Souvenirs.innerHTML = souvenirs;
 	}
@@ -29,14 +32,21 @@ var perteS = 10;
 		//Bonus_malus.innerHTML = compteur;
 	}
 	function aigle1 (){//gain de souvenirs
+	
 		souvenirs = souvenirs + gainA;
 		Souvenirs.innerHTML = souvenirs;
+
+	}
+	function aigle2 (){//gain multi
+		compteur= compteur + 2;
+
 		$bouton.classList.add("disparition");
 
 	}
 	function aigle2 (){//gain multi
 		compteur= compteur + 2;
 		$bouton.classList.add("disparition");
+
 		//Bonus_malus.innerHTML = compteur;
 	}
 //malus apres avoir attraper un spectre/corbeau/vautour---------------------------------
@@ -57,9 +67,9 @@ var perteS = 10;
 		//Bonus_malus.innerHTML = compteur ;
 	}
 	function corbeau(){// perte de souvenirs
+		if (souvenirs>0){
+		souvenirs = souvenirs - perteS;}
 		Souvenirs.innerHTML = souvenirs;
-		souvenirs = souvenirs - perteS;
-		
 	}
 		
 		//multi.value=("Pigeon X"+compteur+"!!!!!  "+prixP+" souvenirs!!");
@@ -91,7 +101,18 @@ var perteS = 10;
 	}
 	function descente(){
 		setInterval("chute()",500);
+	}
+	
+
+
+
+
+
+	
+	function descente(){
+		setInterval("chute()",500);
 		$sauter.classList.add("disparition");
 
 	}
 	
+
