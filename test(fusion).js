@@ -63,7 +63,7 @@ imgfalaise.src="images/falaises.png";
 		}
 		if(compteur==0){
 		var myInterval = setInterval(animate2, 1000/10);
-		}
+		}console.log(vitesseY)
 		}
 
 	bouton.addEventListener('click', animate1);
@@ -183,6 +183,11 @@ var souvenirs = 0;
 		souvenirs = souvenirs + gainP;
 		Souvenirs.innerHTML = souvenirs;console.log("hello")
 		}
+	function pigeon2B (){//gain  multi
+		vitesseY-=1;
+		console.log(posY)
+		//Bonus_malus.innerHTML = compteur;
+	}
 //-----------------------------MALUS-----------------
 	function corbeauM(){// perte de souvenirs
 		if (souvenirs>0){
@@ -193,14 +198,15 @@ var souvenirs = 0;
 		souvenirs = 0;
 		Souvenirs.innerHTML = souvenirs;
 		auto = 0;
-		/*if(compteur >1){
-		compteur = 1;
-		} remplacer le compteur par posY*/
+		if(vitesseY <-8){
+		vitesseY = -8;
+		} 
 		//Bonus_malus.innerHTML = compteur ;
 	}//tres mechant----
 
 	function vautourM(){ //perte de 1 multi
-		/*if(compteur >1){
-		compteur--;
-		}remplacer le compteur par posY*/
+		if(vitesseY <-8){
+		vitesseY += 1;
+		}
+	}
 		//Bonus_malus.innerHTML = compteur ;
