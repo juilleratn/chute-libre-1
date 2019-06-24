@@ -1,10 +1,15 @@
 var cvs=document.getElementById('macanvas');   
 var ctx= cvs.getContext('2d');
 var bouton=document.getElementById('bouton'); 
-var $pigeon=document.getElementById('pigeon');
-$pigeon.classList.add('disparition');
+var $Pigeon=document.getElementById('Pigeon');
+$Pigeon.classList.add('disparition');
 ctx.fillStyle = "red";
-//dessiner le ballon
+var Pigeon2 = document.getElementById('Pigeon2');
+var Aigle1 =document.getElementById('Aigle1');
+var Aigle2 =document.getElementById('Aigle2');
+var Vautour =document.getElementById('Vautour');
+var Corbeau =document.getElementById('Corbeau');
+var Spectre =document.getElementById('Spectre');
 var posX = 100;
 var posY = 1200;
 var vitesseY = -8;
@@ -30,32 +35,33 @@ corbeau.src = "images/corbeau.gif";
 vautour.src = "images/vautour.gif";
 spectre.src = "images/ghost.gif";
 
-function draw(){
-	ctx.drawImage(bg, 0, 0);
-	ctx.drawImage(max, posX, posY);
-	ctx.drawImage(pigeon1, 250, 1000);
-	ctx.drawImage(pigeon2, 50, 800);
-	ctx.drawImage(aigle1, 200, 900);
-	ctx.drawImage(aigle2, 30, 600);
-	ctx.drawImage(corbeau, 300, 700);
-	ctx.drawImage(vautour, 150, 400);
-	ctx.drawImage(spectre, 20, 700)	;
-	}
-	draw();
-function animate1(){
-	if(posY>1){
-		ctx.clearRect(0, 0, cvs.width, cvs.height);
-		posY += vitesseY;
-		ctx.drawImage(pigeon1, 250, 200);
+	function draw(){
+		/*ctx.beginPath();*/
 		ctx.drawImage(bg, 0, 0);
 		ctx.drawImage(max, posX, posY);
-	}
-	if(compteur==0){
-	var myInterval = setInterval(animate2, 1000/30);
-	}
-	}
+		ctx.drawImage(pigeon1, 250, 1000);
+		ctx.drawImage(pigeon2, 50, 800);
+		ctx.drawImage(aigle1, 200, 900);
+		ctx.drawImage(aigle2, 30, 600);
+		ctx.drawImage(corbeau, 300, 700);
+		ctx.drawImage(vautour, 150, 400);
+		ctx.drawImage(spectre, 20, 700)	;
+		}
+		draw();
+	function animate1(){
+		if(posY>1){
+			ctx.clearRect(0, 0, cvs.width, cvs.height);
+			posY += vitesseY;
+			ctx.drawImage(pigeon1, 250, 200);
+			ctx.drawImage(bg, 0, 0);
+			ctx.drawImage(max, posX, posY);
+		}
+		if(compteur==0){
+		var myInterval = setInterval(animate2, 1000/30);
+		}
+		}
 
-bouton.addEventListener('click', animate1);
+	bouton.addEventListener('click', animate1);
 
 	function animate2(){
 		if(posY<cvs.height-1){
@@ -80,78 +86,82 @@ bouton.addEventListener('click', animate1);
 	function BonusPigeon1(){
 		if((posY>270)&&(posY<310)){
 			ctx.drawImage(pigeon1, 350, 290);
-			$pigeon.classList.remove('disparition');console.log("hi");
+			$Pigeon.classList.remove('disparition');
 			}else if((posY>1080)&&(posY<1120)){
 			ctx.drawImage(pigeon1, 150, 1100);
-			$pigeon.classList.remove('disparition');
+			$Pigeon.classList.remove('disparition');
 			}else{
-			$pigeon.classList.add('disparition');
+			$Pigeon.classList.add('disparition');
 			}
 		}
 	function BonusPigeon2(){
 			if((posY>330)&&(posY<370)){
 			ctx.drawImage(pigeon2, 350, 350);
-			$pigeon.classList.remove('disparition');console.log("hi");
+			Pigeon2.classList.remove('disparition');
 			}else if((posY>780)&&(posY<820)){
 			ctx.drawImage(pigeon2, 50, 800);
-			$pigeon.classList.remove('disparition');
+			Pigeon2.classList.remove('disparition');
 			}else{
-			$pigeon.classList.add('disparition');
+			Pigeon2.classList.add('disparition');
 			}
 			}
 	function BonusAigle1(){
 		if((posY>130)&&(posY<170)){
 			ctx.drawImage(aigle1, 175, 150);
-			$pigeon.classList.remove('disparition');
+			Aigle1.classList.remove('disparition');
 			}else if((posY>880)&&(posY<920)){
 			ctx.drawImage(aigle1, 200, 900);
-			$pigeon.classList.remove('disparition');
+			Aigle1.classList.remove('disparition');
 			}else{
-			$pigeon.classList.add('disparition');
+			Aigle1.classList.add('disparition');
 			}
 			}
 	function BonusAigle2(){
 		if((posY>130)&&(posY<170)){
 			ctx.drawImage(aigle2, 175, 150);
-			$pigeon.classList.remove('disparition');
+			Aigle2.classList.remove('disparition');
 			}else if((posY>880)&&(posY<920)){
 			ctx.drawImage(aigle2, 30, 900);
-			$pigeon.classList.remove('disparition');
+			Aigle2.classList.remove('disparition');
 			}else{
-			$pigeon.classList.add('disparition');
+			Aigle2.classList.add('disparition');
 			}
 			}
 	function MalusVautour(){
 		if((posY>130)&&(posY<170)){
 			ctx.drawImage(vautour, 200, 300);
-			$pigeon.classList.remove('disparition');
+			Vautour.classList.remove('disparition');
 			}else if((posY>980)&&(posY<1020)){
 			ctx.drawImage(vautour, 70, 1000);
-			$pigeon.classList.remove('disparition');
+			Vautour.classList.remove('disparition');
 			}else{
-			$pigeon.classList.add('disparition');
+			Vautour.classList.add('disparition');
 			}
 			}
 	function Maluscorbeau(){
 		if((posY>130)&&(posY<170)){
 			ctx.drawImage(corbeau, 45, 400);
-			$pigeon.classList.remove('disparition');console.log("hi");
+			Corbeau.classList.remove('disparition');console.log("hi");
 			}else if((posY>980)&&(posY<1020)){
 			ctx.drawImage(corbeau, 45, 850);
-			$pigeon.classList.remove('disparition');
+			Corbeau.classList.remove('disparition');
 			}else{
-			$pigeon.classList.add('disparition');
+			Corbeau.classList.add('disparition');
 			}
 			}
 	function MalusSpectre(){
 		if((posY>130)&&(posY<170)){
 			ctx.drawImage(spectre, 150, 250);
-			$pigeon.classList.remove('disparition');
+			Spectre.classList.remove('disparition');
 			}else if((posY>980)&&(posY<1020)){
 			ctx.drawImage(spectre, 200, 750);
-			$pigeon.classList.remove('disparition');
+			Spectre.classList.remove('disparition');
 			}else{
-			$pigeon.classList.add('disparition');
+			Spectre.classList.add('disparition');
 			}
-			}
-
+		}
+//------------------------------------------------------------------
+	function pigeon1 (){//gain de souvenirs
+		souvenirs = souvenirs + gainP;
+		Souvenirs.innerHTML = souvenirs;
+		}
