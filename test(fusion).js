@@ -96,7 +96,7 @@ imgfalaise.src="images/falaises.png";
 		if((posY>290)&&(posY<300)){
 			ctx.drawImage(pigeon1, 350, 290);
 			$Pigeon.classList.remove('disparition');
-			}else if((posY>1100)&&(posY<1110)){
+			}else if((posY>100)&&(posY<1110)){
 			ctx.drawImage(pigeon1, 150, 1100);
 			$Pigeon.classList.remove('disparition');
 			}else{
@@ -107,7 +107,7 @@ imgfalaise.src="images/falaises.png";
 			if((posY>350)&&(posY<360)){
 			ctx.drawImage(pigeon2, 350, 350);
 			Pigeon2.classList.remove('disparition');
-			}else if((posY>780)&&(posY<820)){
+			}else if((posY>100)&&(posY<820)){
 			ctx.drawImage(pigeon2, 50, 800);
 			Pigeon2.classList.remove('disparition');
 			}else{
@@ -118,7 +118,7 @@ imgfalaise.src="images/falaises.png";
 		if((posY>150)&&(posY<160)){
 			ctx.drawImage(aigle1, 175, 150);
 			Aigle1.classList.remove('disparition');
-			}else if((posY>880)&&(posY<920)){
+			}else if((posY>100)&&(posY<920)){
 			ctx.drawImage(aigle1, 200, 900);
 			Aigle1.classList.remove('disparition');
 			}else{
@@ -129,7 +129,7 @@ imgfalaise.src="images/falaises.png";
 		if((posY>200)&&(posY<210)){
 			ctx.drawImage(aigle2, 175, 200);
 			Aigle2.classList.remove('disparition');
-			}else if((posY>900)&&(posY<910)){
+			}else if((posY>100)&&(posY<910)){
 			ctx.drawImage(aigle2, 30, 900);
 			Aigle2.classList.remove('disparition');
 			}else{
@@ -140,7 +140,7 @@ imgfalaise.src="images/falaises.png";
 		if((posY>300)&&(posY<310)){
 			ctx.drawImage(vautour, 200, 300);
 			Vautour.classList.remove('disparition');
-			}else if((posY>1000)&&(posY<1010)){
+			}else if((posY>100)&&(posY<1010)){
 			ctx.drawImage(vautour, 70, 1000);
 			Vautour.classList.remove('disparition');
 			}else{
@@ -151,7 +151,7 @@ imgfalaise.src="images/falaises.png";
 		if((posY>400)&&(posY<410)){
 			ctx.drawImage(corbeau, 45, 400);
 			Corbeau.classList.remove('disparition');console.log("hi");
-			}else if((posY>850)&&(posY<860)){
+			}else if((posY>100)&&(posY<860)){
 			ctx.drawImage(corbeau, 45, 850);
 			Corbeau.classList.remove('disparition');
 			}else{
@@ -162,15 +162,45 @@ imgfalaise.src="images/falaises.png";
 		if((posY>250)&&(posY<260)){
 			ctx.drawImage(spectre, 150, 250);
 			Spectre.classList.remove('disparition');
-			}else if((posY>750)&&(posY<760)){
+			}else if((posY>100)&&(posY<760)){
 			ctx.drawImage(spectre, 200, 750);
 			Spectre.classList.remove('disparition');
 			}else{
 			Spectre.classList.add('disparition');
 			}
 		}
-//------------------------------------------------------------------
-	function pigeon1 (){//gain de souvenirs
+//--------------------------Variable Bonus/Malus---------------------
+//----------------------------BONUS--------------------
+var gainP = 5;
+var gainA = 20;
+var bo = document.getElementById('Boost')
+var cout = 20;
+var auto = 0;
+var souvenirs = 0;
+var perteS = 10;
+var souvenirs = 0;
+	function pigeon1B (){//gain de souvenirs
 		souvenirs = souvenirs + gainP;
-		Souvenirs.innerHTML = souvenirs;
+		Souvenirs.innerHTML = souvenirs;console.log("hello")
 		}
+//-----------------------------MALUS-----------------
+	function corbeauM(){// perte de souvenirs
+		if (souvenirs>0){
+		souvenirs = souvenirs - perteS;}
+		Souvenirs.innerHTML = souvenirs;
+	}
+	function spectreM(){//perte de tous les  souvenirs et multi
+		souvenirs = 0;
+		Souvenirs.innerHTML = souvenirs;
+		auto = 0;
+		/*if(compteur >1){
+		compteur = 1;
+		} remplacer le compteur par posY*/
+		//Bonus_malus.innerHTML = compteur ;
+	}//tres mechant----
+
+	function vautourM(){ //perte de 1 multi
+		/*if(compteur >1){
+		compteur--;
+		}remplacer le compteur par posY*/
+		//Bonus_malus.innerHTML = compteur ;
