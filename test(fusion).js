@@ -63,7 +63,7 @@ imgfalaise.src="images/falaises.png";
 		}
 		if(compteur==0){
 		var myInterval = setInterval(animate2, 1000/10);
-		}console.log(vitesseY)
+		}
 		}
 
 	bouton.addEventListener('click', animate1);
@@ -135,7 +135,7 @@ imgfalaise.src="images/falaises.png";
 			}else{
 			Aigle2.classList.add('disparition');
 			}
-			}
+				}
 	function MalusVautour(){
 		if((posY>300)&&(posY<310)){
 			ctx.drawImage(vautour, 200, 300);
@@ -181,12 +181,22 @@ var perteS = 10;
 var souvenirs = 0;
 	function pigeon1B (){//gain de souvenirs
 		souvenirs = souvenirs + gainP;
-		Souvenirs.innerHTML = souvenirs;console.log("hello")
+		Souvenirs.innerHTML = souvenirs;
 		}
 	function pigeon2B (){//gain  multi
 		vitesseY-=1;
 		console.log(posY)
 		//Bonus_malus.innerHTML = compteur;
+	}
+	function aigle1B (){//gain de souvenirs
+		souvenirs = souvenirs + gainA;
+		Souvenirs.innerHTML = souvenirs;
+	}
+	function aigle2B (){//gain multi
+		 vitesseY -= 2;
+		$bouton.classList.add("disparition");
+		console.log(vitesseY);
+			//Bonus_malus.innerHTML = compteur;
 	}
 //-----------------------------MALUS-----------------
 	function corbeauM(){// perte de souvenirs
@@ -200,13 +210,14 @@ var souvenirs = 0;
 		auto = 0;
 		if(vitesseY <-8){
 		vitesseY = -8;
-		} 
+		
+		}console.log(vitesseY); 
 		//Bonus_malus.innerHTML = compteur ;
 	}//tres mechant----
-
 	function vautourM(){ //perte de 1 multi
 		if(vitesseY <-8){
 		vitesseY += 1;
-		}
+
+		}console.log(vitesseY);
 	}
 		//Bonus_malus.innerHTML = compteur ;
