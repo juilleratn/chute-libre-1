@@ -13,11 +13,12 @@ var Spectre =document.getElementById('Spectre');
 var posX = 100;
 var posY = 1200;
 var vitesseY = -8;
-var vitesseYauto=1;
+var vitesseYauto=3;
 var compteur=0;
 
 var bg = new Image();
 var max= new Image();
+var max1= new Image();
 var pigeon1 = new Image();
 var pigeon2 = new Image();
 var aigle1 = new Image();
@@ -25,15 +26,19 @@ var aigle2 = new Image();
 var vautour = new Image();
 var spectre = new Image();
 var corbeau = new Image();
+var imgfalaise= new Image();
 bg.src = "images/background.png";
-max.src = "images/max.gif";
+max.src = "images/max.png";
 pigeon1.src = "images/pigeon1.gif";
 pigeon2.src = "images/pigeon2.gif";
-aigle1.src = "images/aigle1.gif";
+aigle1.src = "images/aigle1.png";
 aigle2.src = "images/eagle2.gif";
 corbeau.src = "images/corbeau.gif";
 vautour.src = "images/vautour.gif";
 spectre.src = "images/ghost.gif";
+max.src = "images/maxvol.png";
+max1.src = "images/maxchute.png";
+imgfalaise.src="images/falaises.png";
 
 	function draw(){
 		/*ctx.beginPath();*/
@@ -52,24 +57,28 @@ spectre.src = "images/ghost.gif";
 		if(posY>1){
 			ctx.clearRect(0, 0, cvs.width, cvs.height);
 			posY += vitesseY;
-			ctx.drawImage(pigeon1, 250, 200);
-			ctx.drawImage(bg, 0, 0);
+			//ctx.drawImage(bg, 0, 0);
 			ctx.drawImage(max, posX, posY);
+
 		}
 		if(compteur==0){
-		var myInterval = setInterval(animate2, 1000/30);
+		var myInterval = setInterval(animate2, 1000/10);
 		}
 		}
 
 	bouton.addEventListener('click', animate1);
 
 	function animate2(){
-		if(posY<cvs.height-1){
-		ctx.clearRect(0, 0, cvs.width, cvs.height);
-		posY += vitesseYauto
-		compteur++
-		ctx.drawImage(bg, 0, 0);
-		ctx.drawImage(max, posX, posY);
+		
+		if(posY<cvs.height-80){
+	ctx.clearRect(0, 0, cvs.width, cvs.height);
+	cvs.classList.add("canvas");
+	//cvs.classList.remove("canvas1");
+	posY += vitesseYauto
+	compteur++
+	//ctx.drawImage(mon_image, 0, 0);
+	ctx.drawImage(max1, posX, posY);
+	ctx.drawImage(imgfalaise, 0, cvs.height-168)
 		}else {
 			ctx.clearRect(0, 0, cvs.width, cvs.height);
 			ctx.font = '48px Comic Sans MS';
@@ -84,10 +93,10 @@ spectre.src = "images/ghost.gif";
 		MalusSpectre();
 		}
 	function BonusPigeon1(){
-		if((posY>270)&&(posY<310)){
+		if((posY>290)&&(posY<300)){
 			ctx.drawImage(pigeon1, 350, 290);
 			$Pigeon.classList.remove('disparition');
-			}else if((posY>1080)&&(posY<1120)){
+			}else if((posY>1100)&&(posY<1110)){
 			ctx.drawImage(pigeon1, 150, 1100);
 			$Pigeon.classList.remove('disparition');
 			}else{
@@ -95,7 +104,7 @@ spectre.src = "images/ghost.gif";
 			}
 		}
 	function BonusPigeon2(){
-			if((posY>330)&&(posY<370)){
+			if((posY>350)&&(posY<360)){
 			ctx.drawImage(pigeon2, 350, 350);
 			Pigeon2.classList.remove('disparition');
 			}else if((posY>780)&&(posY<820)){
@@ -106,7 +115,7 @@ spectre.src = "images/ghost.gif";
 			}
 			}
 	function BonusAigle1(){
-		if((posY>130)&&(posY<170)){
+		if((posY>150)&&(posY<160)){
 			ctx.drawImage(aigle1, 175, 150);
 			Aigle1.classList.remove('disparition');
 			}else if((posY>880)&&(posY<920)){
@@ -117,10 +126,10 @@ spectre.src = "images/ghost.gif";
 			}
 			}
 	function BonusAigle2(){
-		if((posY>130)&&(posY<170)){
-			ctx.drawImage(aigle2, 175, 150);
+		if((posY>200)&&(posY<210)){
+			ctx.drawImage(aigle2, 175, 200);
 			Aigle2.classList.remove('disparition');
-			}else if((posY>880)&&(posY<920)){
+			}else if((posY>900)&&(posY<910)){
 			ctx.drawImage(aigle2, 30, 900);
 			Aigle2.classList.remove('disparition');
 			}else{
@@ -128,10 +137,10 @@ spectre.src = "images/ghost.gif";
 			}
 			}
 	function MalusVautour(){
-		if((posY>130)&&(posY<170)){
+		if((posY>300)&&(posY<310)){
 			ctx.drawImage(vautour, 200, 300);
 			Vautour.classList.remove('disparition');
-			}else if((posY>980)&&(posY<1020)){
+			}else if((posY>1000)&&(posY<1010)){
 			ctx.drawImage(vautour, 70, 1000);
 			Vautour.classList.remove('disparition');
 			}else{
@@ -139,10 +148,10 @@ spectre.src = "images/ghost.gif";
 			}
 			}
 	function Maluscorbeau(){
-		if((posY>130)&&(posY<170)){
+		if((posY>400)&&(posY<410)){
 			ctx.drawImage(corbeau, 45, 400);
 			Corbeau.classList.remove('disparition');console.log("hi");
-			}else if((posY>980)&&(posY<1020)){
+			}else if((posY>850)&&(posY<860)){
 			ctx.drawImage(corbeau, 45, 850);
 			Corbeau.classList.remove('disparition');
 			}else{
@@ -150,10 +159,10 @@ spectre.src = "images/ghost.gif";
 			}
 			}
 	function MalusSpectre(){
-		if((posY>130)&&(posY<170)){
+		if((posY>250)&&(posY<260)){
 			ctx.drawImage(spectre, 150, 250);
 			Spectre.classList.remove('disparition');
-			}else if((posY>980)&&(posY<1020)){
+			}else if((posY>750)&&(posY<760)){
 			ctx.drawImage(spectre, 200, 750);
 			Spectre.classList.remove('disparition');
 			}else{

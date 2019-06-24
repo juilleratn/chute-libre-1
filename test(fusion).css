@@ -3,19 +3,15 @@ body{
 	background-size: cover;
 }
 #container{
-	/*background-image: url("images/background1.jpg");*/
 	background-position: cover;
 	background-position-x: 5rem;
 	background-repeat: no-repeat;
 	display: flex;
-	
-}
+	}
 #macanvas{
 	display: block;
-	background-image: url("images/background.png");
-	
-
-}
+	/*background-image: url("images/background.png");*/
+	}
 .bouton{
 	width: 80px;
 	height: 30px;
@@ -30,4 +26,31 @@ body{
 	display: none;
 	width: 0px;
 	height: 0px
+}
+.canvas{
+	background-image: url("images/background.png");
+	animation-duration: 100000s;
+  	animation-name: slidein;
+}
+@keyframes slidein {
+  from {
+    background-position: 0px 9999000px;
+        }
+  to {
+    background-position: 0px 0px;
+  }
+}
+.canvas1{
+	animation-duration: 1s;
+  	animation-name: slideon;
+}
+@keyframes slideon {
+  from {
+    background-position: 0px 0px;
+    
+    }
+
+  to {
+    background-position: 0px 5px;
+  }
 }
