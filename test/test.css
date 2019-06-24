@@ -9,7 +9,34 @@
 	display: block;
 	background-image: url("background.png");
 	
+}
+.canvas{
+	animation-duration: 100000s;
+  	animation-name: slidein;
+}
+@keyframes slidein {
+  from {
+    background-position: 0px 9999000px;
+    
+    }
 
+  to {
+    background-position: 0px 0px;
+  }
+}
+.canvas1{
+	animation-duration: 1s;
+  	animation-name: slideon;
+}
+@keyframes slideon {
+  from {
+    background-position: 0px 0px;
+    
+    }
+
+  to {
+    background-position: 0px 5px;
+  }
 }
 .bouton{
 	width: 80px;
