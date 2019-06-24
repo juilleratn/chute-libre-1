@@ -1,0 +1,33 @@
+body{
+	background-image: url("images/background1.jpg");
+	background-size: cover;
+}
+#container{
+	/*background-image: url("images/background1.jpg");*/
+	background-position: cover;
+	background-position-x: 5rem;
+	background-repeat: no-repeat;
+	display: flex;
+	
+}
+#macanvas{
+	display: block;
+	background-image: url("images/background.png");
+	
+
+}
+.bouton{
+	width: 80px;
+	height: 30px;
+	font-family: Comic Sans MS;
+	margin-bottom: 20px;
+	border-radius: 8px;
+	background-color: blue;
+	color: yellow;
+	margin-right: 300px;
+}
+.disparition{
+	display: none;
+	width: 0px;
+	height: 0px
+}
